@@ -24,6 +24,16 @@
     --box-shadow: 0 2rem 3rem var(--clr-light);
 }
 
+/* */
+.dark-theme-variables {
+  --clr-color-background: #181a1e;
+  --clr-white: #202528;
+  --clr-light: rgba(0, 0, 0, 0.4);
+  --clr-dark: #edeffd;
+  --clr-dark-variant: #677483;
+  --box-shadow: 0 2rem 3rem var(--clr-light);
+}
+
 * {
     margin: 0;
     padding: 0;
@@ -545,7 +555,15 @@ start right side style
     z-index: 3;
     background: var(--clr-white);
     display: none;
-  }
+    left: -100px;
+    animation: menuAni 1s forwards;
+}
+
+@keyframes menuAni {
+    to{
+        left: 0;
+    }
+}
 
   aside .logo h2{
     display: inline;
