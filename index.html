@@ -11,6 +11,7 @@
 
     <!-- Chart.js CDN Link -->
     <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" />
 
     <link rel="stylesheet" href="style.css">
 </head>
@@ -138,6 +139,14 @@
 
             </div>
             <!-- end insights -->
+
+            <!-- 2. Main section me jahan map chahiye wahan yeh div add karein -->
+            <div class="map-card">
+                <h2>Our Office Location</h2>
+                <div id="map"></div>
+            </div>
+
+
 
             <!-- CHARTS SECTION START -->
             <div class="charts-container">
@@ -325,6 +334,8 @@
 
     </div>
 
+    <!--  script.js se bilkul pehle Leaflet JS CDN add karein -->
+    <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
     <script src="script.js"></script>
 </body>
 

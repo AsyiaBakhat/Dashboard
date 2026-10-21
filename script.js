@@ -90,3 +90,34 @@ new Chart(ctxBar, {
         }
     }
 });
+
+// ==================== OFFICE MAP SETUP ====================
+// Dummy Coordinates (Lahore Location)
+const officeLat = 32.709858;
+const officeLng = 71.53830;
+
+// Map initialize karein
+const map = L.map('map').setView([officeLat, officeLng], 13);
+
+// OpenStreetMap Tiles
+L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
+    maxZoom: 19,
+    attribution: '© OpenStreetMap'
+}).addTo(map);
+
+// Marker Add karein
+const marker = L.marker([officeLat, officeLng]).addTo(map);
+
+// Google Maps Directions Link
+const googleMapsUrl = `https://www.google.com/maps/search/?api=1&query=${officeLat},${officeLng}`;
+
+// Marker Popup (Click karne par Google Maps ka link show hoga)
+marker.bindPopup(`
+    <div style="text-align: center;">
+        <b>C-BAKHAT Head Office</b><br>
+        <p style="margin: 5px 0; color: #555;">Click below to open in Google Maps</p>
+        <a href="${googleMapsUrl}" target="_blank" style="color: #7380ec; font-weight: bold; text-decoration: underline;">
+            Get Directions 📍
+        </a>
+    </div>
+`).openPopup();
